@@ -33,5 +33,11 @@ router.post('/', (req, res) => {
 });
 // Edit - Will be handled by React application
 // Show
+router.get('/:id', (req, res)=>{
+    Todos.findById(req.params.id, (err, foundTodo)=>{
+        res.json(foundTodo);
+    });
+});
+
 
 module.exports = router;
